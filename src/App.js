@@ -1,15 +1,33 @@
+import React from "react";
+import MainApp from "./Components/VideoCont";
+import AppBar from "./Components/AppHeader";
 
-import './App.css';
+const App = () => {
+  const handleConnectWallet = () => {
+    console.log("Connect Wallet clicked");
+    // Implement wallet connection logic here
+  };
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-13.png" className="App-logo" alt="GFG-logo" />
-     
-      </header>
+    <div
+      style={{
+        backgroundColor: "#000000",
+        color: "#ffffff",
+        minHeight: "100vh",
+      }}
+    >
+      <AppBar
+        walletAddress="awtuwyybbsbshghws7266265yhsbsbbsbv"
+        onConnectWallet={handleConnectWallet}
+      />
+      <div style={{ padding: "20px" }}>
+        <h2>Hot Corn Videos in your region</h2>
+        <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <MainApp />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
